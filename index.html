@@ -1,229 +1,347 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-NZ">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Professional house and office cleaning services. Request a free cleaning quote today.">
-  <title>PureShine Cleaning | Professional Cleaning Services</title>
+
+  <title>PureShine Cleaning | Auckland Cleaning Services</title>
+  <meta name="description" content="Discover professional house, office and move-out cleaning services in Auckland. Contact PureShine Cleaning to request a quote.">
+  <meta name="theme-color" content="#123b32">
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    :root {
+      --green: #13815b;
+      --dark: #123b32;
+      --light: #f1f8f4;
+      --text: #52625a;
+      --white: #ffffff;
+      --border: #dce8e0;
     }
 
-    :root {
-      --green: #16845b;
-      --dark: #153b32;
-      --light: #f2faf6;
-      --white: #ffffff;
-      --text: #42534c;
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     html { scroll-behavior: smooth; }
 
     body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.7;
       color: var(--text);
+      background: var(--white);
     }
 
     a { text-decoration: none; }
 
+    img {
+      display: block;
+      width: 100%;
+      object-fit: cover;
+    }
+
     .container {
-      width: min(1100px, 90%);
+      width: min(1120px, 90%);
       margin: auto;
+    }
+
+    .topbar {
+      padding: 9px 0;
+      color: white;
+      background: var(--dark);
+      font-size: 13px;
+      text-align: center;
     }
 
     header {
       background: white;
-      padding: 18px 0;
-      border-bottom: 1px solid #e5eee9;
+      border-bottom: 1px solid var(--border);
     }
 
     nav {
+      min-height: 78px;
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      gap: 20px;
+      align-items: center;
+      gap: 22px;
     }
 
     .logo {
-      font-size: 24px;
-      font-weight: 800;
       color: var(--dark);
+      font-size: 25px;
+      font-weight: 800;
+      letter-spacing: -1px;
     }
 
     .logo span { color: var(--green); }
 
-    nav ul {
+    .nav-links {
       display: flex;
-      list-style: none;
-      gap: 22px;
       align-items: center;
+      gap: 25px;
+      list-style: none;
     }
 
-    nav a { color: var(--dark); font-weight: 600; }
+    .nav-links a {
+      color: var(--dark);
+      font-weight: 600;
+      font-size: 14px;
+    }
 
     .button {
       display: inline-block;
-      background: var(--green);
-      color: white;
       padding: 13px 21px;
+      color: white;
+      background: var(--green);
+      border: 0;
       border-radius: 7px;
-      border: none;
-      cursor: pointer;
       font-weight: 700;
+      cursor: pointer;
+      text-align: center;
+      font-size: 15px;
+    }
+
+    .button:hover { background: #0d6848; }
+
+    .button:disabled {
+      opacity: 0.65;
+      cursor: wait;
     }
 
     .hero {
       background: var(--light);
-      padding: 75px 0;
+      padding: 76px 0;
     }
 
     .hero-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       align-items: center;
-      gap: 45px;
+      gap: 55px;
     }
 
     .eyebrow {
       color: var(--green);
-      font-weight: 700;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 1.8px;
       text-transform: uppercase;
-      letter-spacing: 1px;
-      font-size: 13px;
     }
+
+    h1, h2, h3 { color: var(--dark); }
 
     h1 {
-      color: var(--dark);
-      font-size: clamp(36px, 5vw, 55px);
+      font-size: clamp(38px, 5vw, 60px);
       line-height: 1.12;
-      margin: 15px 0;
+      letter-spacing: -1.8px;
+      margin: 17px 0;
     }
 
-    .hero p { margin-bottom: 24px; }
+    .hero-copy {
+      font-size: 17px;
+      margin-bottom: 25px;
+      max-width: 510px;
+    }
 
     .hero img {
-      width: 100%;
-      height: 370px;
-      object-fit: cover;
+      height: 410px;
       border-radius: 18px;
+      box-shadow: 0 18px 45px #123b3217;
     }
 
-    section { padding: 65px 0; }
+    .hero-note {
+      display: block;
+      margin-top: 13px;
+      font-size: 12px;
+      color: #68776f;
+    }
+
+    section { padding: 76px 0; }
 
     .section-heading {
+      max-width: 650px;
+      margin: 0 auto 38px;
       text-align: center;
-      margin-bottom: 35px;
     }
 
     h2 {
-      color: var(--dark);
-      font-size: 32px;
-      margin-bottom: 10px;
+      font-size: clamp(29px, 4vw, 39px);
+      line-height: 1.2;
+      margin: 10px 0 14px;
     }
 
-    .services {
+    .services-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
+      gap: 24px;
     }
 
     .service-card {
-      border: 1px solid #e5eee9;
-      border-radius: 12px;
+      border: 1px solid var(--border);
+      border-radius: 13px;
       overflow: hidden;
       background: white;
+      transition: transform 0.2s, box-shadow 0.2s;
     }
 
-    .service-card img {
-      width: 100%;
-      height: 190px;
-      object-fit: cover;
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px #123b3210;
     }
 
-    .service-content { padding: 20px; }
+    .service-card img { height: 210px; }
 
-    h3 { color: var(--dark); margin-bottom: 8px; }
+    .service-content { padding: 23px; }
 
-    .why {
-      background: var(--light);
+    h3 {
+      font-size: 20px;
+      margin-bottom: 9px;
     }
 
-    .benefits {
+    .service-content p { font-size: 14px; }
+
+    .why { background: var(--light); }
+
+    .benefits-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
-      text-align: center;
+      gap: 24px;
     }
 
     .benefit {
+      padding: 27px;
       background: white;
-      padding: 25px;
       border-radius: 12px;
+      border: 1px solid var(--border);
     }
 
-    .benefit strong {
-      display: block;
-      color: var(--dark);
-      margin-bottom: 8px;
+    .benefit-icon {
+      font-size: 25px;
+      margin-bottom: 10px;
     }
 
     .contact-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 55px;
+      align-items: start;
     }
 
-    form {
-      display: grid;
-      gap: 14px;
+    .contact-info p { margin: 13px 0; }
+
+    .contact-panel {
+      padding: 30px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      box-shadow: 0 10px 35px #123b3209;
+    }
+
+    form { display: grid; gap: 15px; }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--dark);
+      font-weight: 700;
+      font-size: 13px;
     }
 
     input, select, textarea {
+      display: block;
       width: 100%;
-      padding: 13px;
-      border: 1px solid #cbd9d1;
+      padding: 13px 14px;
+      border: 1px solid #ccd9d0;
       border-radius: 7px;
+      background: white;
       font: inherit;
+      font-size: 14px;
+      color: var(--dark);
     }
 
-    textarea { min-height: 110px; resize: vertical; }
+    input:focus, select:focus, textarea:focus {
+      outline: 2px solid #13815b55;
+      border-color: var(--green);
+    }
+
+    textarea {
+      min-height: 115px;
+      resize: vertical;
+    }
+
+    .form-status {
+      font-size: 14px;
+      overflow-wrap: anywhere;
+    }
 
     footer {
+      padding: 34px 0;
       background: var(--dark);
-      color: white;
+      color: #e5eee9;
       text-align: center;
-      padding: 25px 0;
+      font-size: 13px;
     }
 
+    footer .logo { color: white; }
     footer p { margin: 5px 0; }
 
-    @media (max-width: 750px) {
-      nav { flex-wrap: wrap; }
-      nav ul { gap: 12px; flex-wrap: wrap; }
-      .hero-grid, .contact-grid { grid-template-columns: 1fr; }
-      .services, .benefits { grid-template-columns: 1fr; }
-      .hero { padding: 45px 0; }
-      .hero img { height: 260px; }
+    @media (max-width: 780px) {
+      nav {
+        padding: 17px 0;
+        flex-wrap: wrap;
+      }
+
+      .nav-links {
+        order: 3;
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 13px 20px;
+      }
+
+      .nav-links a { font-size: 13px; }
+
+      .hero { padding: 48px 0; }
+
+      .hero-grid, .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .hero img { height: 280px; }
+
+      .services-grid, .benefits-grid {
+        grid-template-columns: 1fr;
+      }
+
+      section { padding: 54px 0; }
+
+      .contact-panel { padding: 20px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition: none !important; }
     }
   </style>
 </head>
 
 <body>
+  <div class="topbar">
+    Cleaning services in Auckland, New Zealand
+  </div>
+
   <header>
-    <nav class="container">
+    <nav class="container" aria-label="Main navigation">
       <a class="logo" href="#home">Pure<span>Shine</span></a>
-      <ul>
+
+      <ul class="nav-links">
         <li><a href="#home">Home</a></li>
         <li><a href="#services">Services</a></li>
-        <li><a href="#about">Why Us</a></li>
+        <li><a href="#about">Why Choose Us</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
+
       <a class="button" href="#contact">Get a Quote</a>
     </nav>
   </header>
@@ -234,51 +352,62 @@
         <div>
           <span class="eyebrow">A fresh start for every space</span>
           <h1>A Cleaner Space. A Happier Place.</h1>
-          <p>
-            Professional cleaning solutions for homes and workplaces.
-            Tell us what you need, and let us help make your space shine.
+          <p class="hero-copy">
+            Looking for cleaning support for your home or workplace?
+            Explore our cleaning services and send us an enquiry for a quote.
           </p>
           <a class="button" href="#contact">Request a Free Quote</a>
+          <span class="hero-note">
+            Residential and commercial cleaning enquiries welcome.
+          </span>
         </div>
+
         <img
           src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1000&q=85"
-          alt="Professional cleaner working in a bright room">
+          alt="Cleaning professional working indoors"
+          fetchpriority="high">
       </div>
     </section>
 
     <section id="services">
       <div class="container">
         <div class="section-heading">
-          <span class="eyebrow">What we do</span>
-          <h2>Our Cleaning Services</h2>
-          <p>Flexible cleaning options to suit your space.</p>
+          <span class="eyebrow">Our services</span>
+          <h2>Cleaning Solutions for Every Space</h2>
+          <p>Choose a service and tell us what you need through our enquiry form.</p>
         </div>
 
-        <div class="services">
+        <div class="services-grid">
           <article class="service-card">
-            <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=700&q=80"
-              alt="Clean and tidy home interior">
+            <img
+              src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=700&q=80"
+              alt="Bright and clean home interior"
+              loading="lazy">
             <div class="service-content">
               <h3>House Cleaning</h3>
-              <p>Help keep kitchens, bathrooms and living spaces clean and fresh.</p>
+              <p>Cleaning enquiries for kitchens, bathrooms, bedrooms and living areas.</p>
             </div>
           </article>
 
           <article class="service-card">
-            <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=700&q=80"
-              alt="Modern office workspace">
+            <img
+              src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=700&q=80"
+              alt="Modern office workspace"
+              loading="lazy">
             <div class="service-content">
               <h3>Office Cleaning</h3>
-              <p>Cleaning options for offices and professional workspaces.</p>
+              <p>Ask about cleaning options for offices and commercial workspaces.</p>
             </div>
           </article>
 
           <article class="service-card">
-            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=700&q=80"
-              alt="Bright and welcoming residential property">
+            <img
+              src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=700&q=80"
+              alt="Welcoming residential property"
+              loading="lazy">
             <div class="service-content">
               <h3>Move-Out Cleaning</h3>
-              <p>Cleaning support when preparing a property for its next occupants.</p>
+              <p>Enquire about cleaning when preparing a property for its next occupants.</p>
             </div>
           </article>
         </div>
@@ -288,86 +417,154 @@
     <section class="why" id="about">
       <div class="container">
         <div class="section-heading">
-          <span class="eyebrow">The PureShine difference</span>
-          <h2>Cleaning Made Simple</h2>
+          <span class="eyebrow">Why choose us</span>
+          <h2>Simple, Convenient Cleaning Enquiries</h2>
+          <p>Get in touch to discuss the right service for your property.</p>
         </div>
 
-        <div class="benefits">
-          <div class="benefit">
-            <strong>Convenient Quotes</strong>
-            <p>Tell us about your cleaning needs through our enquiry form.</p>
-          </div>
-          <div class="benefit">
-            <strong>Flexible Services</strong>
-            <p>Ask about cleaning options for your home or business.</p>
-          </div>
-          <div class="benefit">
-            <strong>Friendly Support</strong>
-            <p>Get in touch to discuss the service that suits you.</p>
-          </div>
+        <div class="benefits-grid">
+          <article class="benefit">
+            <div class="benefit-icon" aria-hidden="true">✦</div>
+            <h3>Tailored Services</h3>
+            <p>Tell us about your property and the cleaning you are looking for.</p>
+          </article>
+
+          <article class="benefit">
+            <div class="benefit-icon" aria-hidden="true">✓</div>
+            <h3>Easy Enquiries</h3>
+            <p>Send your requirements through our convenient online quote form.</p>
+          </article>
+
+          <article class="benefit">
+            <div class="benefit-icon" aria-hidden="true">⌂</div>
+            <h3>Local Focus</h3>
+            <p>Contact us about cleaning requirements in Auckland, New Zealand.</p>
+          </article>
         </div>
       </div>
     </section>
 
     <section id="contact">
       <div class="container contact-grid">
-        <div>
-          <span class="eyebrow">Let's get started</span>
-          <h2>Request Your Free Quote</h2>
-          <p>Complete the form and your email app will open with your enquiry ready to send.</p>
-          <p style="margin-top:20px"><strong>Service area:</strong> Auckland, New Zealand</p>
-          <p><strong>Email:</strong> Replace with the business email</p>
-          <p><strong>Phone:</strong> Replace with the business phone</p>
+        <div class="contact-info">
+          <span class="eyebrow">Contact us</span>
+          <h2>Request Your Cleaning Quote</h2>
+          <p>
+            Complete the form with your contact details and the service
+            you are interested in. We will receive your enquiry through our
+            online form service.
+          </p>
+
+          <p><strong>Service area:</strong> Auckland, New Zealand</p>
+          <p><strong>Email:</strong> Add the real business email before launch.</p>
+          <p><strong>Phone:</strong> Add the real business phone before launch.</p>
+          <p>We look forward to hearing from you.</p>
         </div>
 
-        <form id="quote-form">
-          <input name="name" placeholder="Your full name" required>
-          <input name="email" type="email" placeholder="Your email address" required>
-          <input name="phone" type="tel" placeholder="Your phone number">
-          <select name="service" required>
-            <option value="">Choose a cleaning service</option>
-            <option>House Cleaning</option>
-            <option>Office Cleaning</option>
-            <option>Move-Out Cleaning</option>
-            <option>Other</option>
-          </select>
-          <textarea name="message" placeholder="Tell us about your cleaning needs" required></textarea>
-          <button class="button" type="submit">Prepare My Enquiry</button>
-          <p id="form-status" role="status"></p>
-        </form>
+        <div class="contact-panel">
+          <form
+            id="quote-form"
+            action="https://formspree.io/f/xzedgzlj"
+            method="POST">
+
+            <div>
+              <label for="name">Full name *</label>
+              <input id="name" name="name" type="text"
+                autocomplete="name" required>
+            </div>
+
+            <div>
+              <label for="email">Email address *</label>
+              <input id="email" name="email" type="email"
+                autocomplete="email" required>
+            </div>
+
+            <div>
+              <label for="phone">Phone number</label>
+              <input id="phone" name="phone" type="tel"
+                autocomplete="tel">
+            </div>
+
+            <div>
+              <label for="service">Cleaning service *</label>
+              <select id="service" name="service" required>
+                <option value="">Select a service</option>
+                <option value="House Cleaning">House Cleaning</option>
+                <option value="Office Cleaning">Office Cleaning</option>
+                <option value="Move-Out Cleaning">Move-Out Cleaning</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="message">Tell us about your requirements *</label>
+              <textarea id="message" name="message"
+                placeholder="Describe the property and the cleaning you need..."
+                required></textarea>
+            </div>
+
+            <button class="button" type="submit" id="submit-button">
+              Send Quote Request
+            </button>
+
+            <p class="form-status" id="form-status" role="status"
+              aria-live="polite"></p>
+          </form>
+        </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <p><strong>PureShine Cleaning</strong></p>
-    <p>Professional Cleaning Services | Auckland, NZ</p>
-    <p>Demo website template — replace sample details before launch.</p>
-    <p>© <span id="year"></span> PureShine Cleaning</p>
+    <div class="container">
+      <a class="logo" href="#home">Pure<span>Shine</span></a>
+      <p>Cleaning services | Auckland, New Zealand</p>
+      <p>© <span id="year"></span> PureShine Cleaning</p>
+      <p>Demo template — replace sample business details before launch.</p>
+    </div>
   </footer>
 
   <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
 
-    document.getElementById("quote-form").addEventListener("submit", function(event) {
+    const form = document.getElementById("quote-form");
+    const status = document.getElementById("form-status");
+    const button = document.getElementById("submit-button");
+
+    form.addEventListener("submit", async function(event) {
       event.preventDefault();
 
-      const data = new FormData(this);
-      const email = "REPLACE-WITH-BUSINESS-EMAIL@example.com";
-      const subject = encodeURIComponent("Cleaning Quote Enquiry");
-      const body = encodeURIComponent(
-        "Name: " + data.get("name") +
-        "\nEmail: " + data.get("email") +
-        "\nPhone: " + data.get("phone") +
-        "\nService: " + data.get("service") +
-        "\nDetails: " + data.get("message")
-      );
+      if (!form.reportValidity()) return;
 
-      document.getElementById("form-status").textContent =
-        "Your email app should open. Please send the prepared email to submit your enquiry.";
+      button.disabled = true;
+      button.textContent = "Sending...";
+      status.textContent = "Sending your quote request...";
 
-      window.location.href =
-        "mailto:" + email + "?subject=" + subject + "&body=" + body;
+      try {
+        const response = await fetch(form.action, {
+          method: "POST",
+          body: new FormData(form),
+          headers: {
+            "Accept": "application/json"
+          }
+        });
+
+        if (response.ok) {
+          status.textContent =
+            "Thank you! Your quote request has been submitted.";
+          form.reset();
+        } else {
+          status.textContent =
+            "We couldn't submit your request. Please try again.";
+        }
+      } catch (error) {
+        status.textContent =
+          "A connection problem occurred. Please check your internet and try again.";
+      } finally {
+        button.disabled = false;
+        button.textContent = "Send Quote Request";
+      }
     });
   </script>
 </body>
